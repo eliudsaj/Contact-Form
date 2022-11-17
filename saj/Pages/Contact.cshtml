@@ -1,0 +1,44 @@
+﻿@page
+@model saj.Pages.ContactModel
+@{
+}
+<h1> Contact Us</h1>
+@if(Model.hasData) 
+{
+    <p> Hello @Model.Name</p>
+    <p> Thank you for contacting us</p>
+}
+<div style="max-width:500px;padding:30px">
+    <div id="fcf-form">
+        <Form   method="POST">
+
+            <div class="field">
+                <label for="Name" class="label has-text-weight-normal">Your name</label>
+                <div class="control">
+                    <input type="text" name="Name" id="Name" class="input is-full-width" maxlength="100"
+                           data-validate-field="Name">
+                </div>
+            </div>
+            <div class="field">
+                <label for="Email" class="label has-text-weight-normal">Your email address</label>
+                <div class="control">
+                    <input type="email" name="Email" id="Email" class="input is-full-width" maxlength="100"
+                           data-validate-field="Email">
+                </div>
+            </div>
+            <div class="field">
+                <label for="Message" class="label has-text-weight-normal">Your message</label>
+                <div class="control">
+                    <textarea name="Message" id="Message" class="textarea" maxlength="3000" rows="5"
+                              data-validate-field="Message"></textarea>
+                </div>
+            </div>
+            <div id="fcf-status" class="fcf-status"></div>
+            <div class="field">
+                <div class="buttons">
+                    <button id="fcf-button" type="submit" class="button is-link is-medium">Send Message</button>
+                </div>
+            </div>
+        </Form>
+    </div>
+    </div>
